@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class registros(models.Model):
+	mail = models.EmailField(help_text='Introduce tu Email', primary_key=True)
+	
+	def __unicode__(self):
+		return self.mail
