@@ -18,8 +18,8 @@ h2{
 	position:absolute;
 	width:80px;
 	height:120px;
-	bottom:10px;
-	left:20px;
+	top:10px;
+	left:10px;
 	background:url(../img/light-switch.png) no-repeat -80px 0;
 	cursor:pointer;
 	z-index:100;
@@ -67,17 +67,26 @@ h2{
 #gplus{
 	position: absolute;
 	bottom:5px;
-	right:80px;
+	left:80px;
 }
 
 #twitter{
 	position: absolute;
 	bottom:9px;
-	right:15px;
+	left:15px;
+}
+
+#fblike{
+	position: absolute;
+	bottom:13px;
+	left:140px;
+}
+.fb_edge_widget_with_comment  span.fb_edge_comment_widget {
+    display: none !important;
 }
 
 #suscribeText{
 	position: absolute;
-	bottom:40px;
+	bottom:10px;
 	right:15px;
 }
