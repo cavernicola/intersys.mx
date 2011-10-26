@@ -90,3 +90,12 @@ h2{
 	bottom:10px;
 	right:15px;
 }
+
+#resultado{
+	font-size: 18px;
+	text-shadow: 2px 1px 10px #e6e6e6;
+	position: absolute;
+	bottom: 40px;
+	left: 850px;
+	color: #cbff00;
+}

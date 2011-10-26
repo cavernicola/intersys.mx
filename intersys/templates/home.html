@@ -40,6 +40,24 @@
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
+
+		<script>
+			$(function() {
+				$(".button").click(function() {
+					var email = $("input#email").val();
+					$.ajax({
+						type: "POST",
+						url: "/suscribir/",
+						data: email,
+						success: function() {
+							$('#resultado').html("<h2>Contact Form Submitted!</h2>");
+						};
+					});
+					return false;
+				});
+			});
+		</script>
+
 	</head>
 	<body>
 		<h1><big>Intersys</big><br/> <small>Hospedaje web</small></h1>
@@ -59,10 +77,13 @@
 			</div>
             
 		<!-- nothing important below this line - only twitter & bananas -->
+		<div id="resultado">
+			aqui: {{ resultado }}
+		</div>
 		<div id="suscribeText">
-			<form>
-				<input type="search" autocomplete = "on" placeholder="Introduce tu Email aqui" size="30"/>
-				<input type="submit" value="Enviar" />
+			<form id="testForm" action="">
+				<input type="search" autocomplete="on" id="email" placeholder="Introduce tu Email aqui" size="30"/>
+				<input type="submit" class="button" value="Enviar" />
 			</form>
 		</div>
 		
