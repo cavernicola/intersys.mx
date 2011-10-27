@@ -10,4 +10,5 @@ def index(request):
 def suscribir(request):
 	if request.is_ajax():
 		#return render_to_response('home.html',{'resultado': 'hola'})
-		return HttpResponse('hola')
+		return HttpResponse('success')
+	return HttpResponse('error')

@@ -42,20 +42,24 @@
 		</script>
 
 		<script>
-			$(function() {
-				$(".button").click(function() {
+				$("#submit").click(function() {
 					var email = $("input#email").val();
 					$.ajax({
-						type: "POST",
-						url: "/suscribir/",
+						type: "post",
+						async: false,
+						url: '/suscribirrrr/',
+						data: ({
+							email: $('#email').val()
+						}),
 						data: email,
-						success: function() {
+						success: function(json) {
 							$('#resultado').html("<h2>Contact Form Submitted!</h2>");
+							console.log("Hooray, it worked!");
 						};
+						
 					});
 					return false;
 				});
-			});
 		</script>
 
 	</head>
@@ -81,9 +85,9 @@
 			aqui: {{ resultado }}
 		</div>
 		<div id="suscribeText">
-			<form id="testForm" action="">
+			<form id="testForm" action="" method="post">
 				<input type="search" autocomplete="on" id="email" placeholder="Introduce tu Email aqui" size="30"/>
-				<input type="submit" class="button" value="Enviar" />
+				<input type="submit" id="submit" value="Enviar" />
 			</form>
 		</div>
 		
