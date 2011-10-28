@@ -40,28 +40,6 @@
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
-
-		<script>
-				$("#submit").click(function() {
-					var email = $("input#email").val();
-					$.ajax({
-						type: "post",
-						async: false,
-						url: '/suscribirrrr/',
-						data: ({
-							email: $('#email').val()
-						}),
-						data: email,
-						success: function(json) {
-							$('#resultado').html("<h2>Contact Form Submitted!</h2>");
-							console.log("Hooray, it worked!");
-						};
-						
-					});
-					return false;
-				});
-		</script>
-
 	</head>
 	<body>
 		<h1><big>Intersys</big><br/> <small>Hospedaje web</small></h1>
@@ -85,7 +63,7 @@
 			aqui: {{ resultado }}
 		</div>
 		<div id="suscribeText">
-			<form id="testForm" action="" method="post">
+			<form id="testForm" action="" method="post">{% csrf_token %}
 				<input type="search" autocomplete="on" id="email" placeholder="Introduce tu Email aqui" size="30"/>
 				<input type="submit" id="submit" value="Enviar" />
 			</form>
@@ -98,6 +76,26 @@
 			<g:plusone size="tall" annotation="none"></g:plusone>
 		</div>
 		<div id="fblike" class="fb-like" data-href="www.facebook.com/Intersys.mx" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+		
+		<script>
+				$("#submit").click(function() {
+					var email = $("input#email").val();
+					$.ajax({
+						type: "post",
+						async: false,
+						url: '/suscribir/',
+						data: ({
+							email: $('#email').val()
+						}),
+						data: email,
+						success: function(json) {
+							$('#resultado').html("<h2>Contact Form Submitted!</h2>");
+							console.log("Hooray, it worked!");
+						}
+					});
+					return false;
+				});
+		</script>
 	</body>
 </html>
 
