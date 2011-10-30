@@ -80,16 +80,18 @@
 		<script>
 				$("#submit").click(function() {
 					var email = $("input#email").val();
+					csrf_token = "{{ csrf_token }}";
 					$.ajax({
 						type: "post",
 						async: false,
 						url: '/suscribir/',
 						data: ({
-							email: $('#email').val()
+							email: $('#email').val(),
+							csrfmiddlewaretoken: '{{ csrf_token }}',
 						}),
 						data: email,
 						success: function(json) {
-							$('#resultado').html("<h2>Contact Form Submitted!</h2>");
+							$('#resultado').html("Contact Form Submitted!");
 							console.log("Hooray, it worked!");
 						}
 					});
