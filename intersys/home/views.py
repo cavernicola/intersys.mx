@@ -7,8 +7,10 @@ def index(request):
     #return HttpResponse("Hello, world. You're at the poll index.")
     return render_to_response('home.html')
 
+@csrf_protect
 def suscribir(request):
-	if request.is_ajax():
-		#return render_to_response('home.html',{'resultado': 'hola'})
-		return HttpResponse('success')
-	return HttpResponse('error')
+	if request.POST:
+		print "post"
+		return render_to_response('home.html')
+	else:
+		return render_to_response('home.html')

@@ -91,11 +91,11 @@ h2{
 	right:15px;
 }
 
-#resultado{
+h3.pos_resultado{
+	position: absolute;
 	font-size: 18px;
 	text-shadow: 2px 1px 10px #e6e6e6;
-	position: absolute;
-	bottom: 40px;
-	left: 850px;
+	bottom: 24px;
+	right: 75px;
 	color: #cbff00;
 }
