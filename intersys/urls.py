@@ -20,5 +20,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+	(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /admin", mimetype="text/plain")),
 )
 urlpatterns += staticfiles_urlpatterns()
