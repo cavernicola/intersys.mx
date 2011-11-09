@@ -60,12 +60,11 @@
             
 		<!-- nothing important below this line - only twitter & bananas -->
 		<div id="resultado">
-			<h3 class="pos_resultado">aqui:{{ resultado }}</h3>
+			<h3 class="pos_resultado">{{ resultado }}</h3>
 		</div>
 		<div id="suscribeText">
 			<form id="testForm" action="" method="POST">
-				{% csrf_token %}
-				<input type="search" autocomplete="on" id="email" placeholder="Introduce tu Email aqui" size="30"/>
+				<input type="search" autocomplete="on" id="email" name="email" placeholder={{ msg_mail }} size="30"/>
 				<input type="submit" id="submit" value="Enviar" />
 			</form>
 		</div>
@@ -81,20 +80,25 @@
 		<script>
 				$("#submitt").click(function() {
 					var email = $("input#email").val();
-					csrf_token = "{{ csrf_token }}";
+					console.log("mail");
 					$.ajax({
 						type: "post",
 						async: false,
-						url: '/suscribir/',
-						data: csrf_token,
-						success: function(json) {
-							$('#resultado').html("Contact Form Submitted!");
-							console.log("Hooray, it worked!");
+						url: '/',
+						data: email,
+						success: function(data){
+							console.log('bien');
 						}
 					});
 					return false;
 				});
 		</script>
 	</body>
+	<script
+               type="text/javascript"
+               language="javascript">
+               document.getElementById("email").focus();
+    </script>
+
 </html>
 

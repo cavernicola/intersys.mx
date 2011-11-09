@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
 	'document_root': settings.MEDIA_ROOT,
     }),
-    (r'^suscribir/$','home.views.suscribir'),
     # url(r'^intersys/', include('intersys.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
