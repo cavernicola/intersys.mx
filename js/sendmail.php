@@ -1,9 +1,9 @@
 <?php
 // Who you want to recieve the emails from the form.
-$sendto = 'hepek@awerest.com';
+$sendto = 'jean.sanchez@intersys.mx';
 
 // The subject you'll see in your inbox
-$subject = 'A message from hepek service';
+$subject = 'Mensaje contacto sitio web';
 
 // Message for the user when he/she doesn't fill in the form correctly.
 $errormessage = 'Looks like you are missing some info. Try again.';
